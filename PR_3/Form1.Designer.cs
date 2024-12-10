@@ -29,28 +29,45 @@
         private void InitializeComponent()
         {
             labelTabl = new Label();
+            labelBottom = new Label();
             SuspendLayout();
             // 
             // labelTabl
             // 
-            labelTabl.Location = new Point(0, 2);
+            labelTabl.Dock = DockStyle.Top;
+            labelTabl.Font = new Font("Segoe UI Emoji", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            labelTabl.Location = new Point(0, 0);
             labelTabl.Name = "labelTabl";
-            labelTabl.Size = new Size(803, 447);
+            labelTabl.Size = new Size(800, 97);
             labelTabl.TabIndex = 0;
+            labelTabl.Text = "Список партнёров";
+            labelTabl.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // labelBottom
+            // 
+            labelBottom.Dock = DockStyle.Bottom;
+            labelBottom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            labelBottom.Location = new Point(0, 103);
+            labelBottom.Name = "labelBottom";
+            labelBottom.Size = new Size(800, 347);
+            labelBottom.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(labelBottom);
             Controls.Add(labelTabl);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private Label labelTabl;
+        private Label labelBottom;
     }
 }

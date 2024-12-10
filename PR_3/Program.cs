@@ -1,24 +1,19 @@
-using Microsoft.VisualBasic.ApplicationServices;
+using PR_3;
 
-namespace PR_3
+namespace Pr_3
 {
     internal static class Program
     {
+        /// <summary>
+        ///  The main entry point for the application.
+        /// </summary>
         [STAThread]
         static void Main()
         {
-            using (PartnersContext db = new PartnersContext())
-            {
-                // получаем объекты из бд и выводим на консоль
-                var Partners = db.Partners.ToList();
-                Console.WriteLine("Users list:");
-                foreach (Partner u in Partners)
-                {
-                    Console.WriteLine($"{u.Id}.{u.IdPartnerType} - {u.NamePartner}");
-                }
-                ApplicationConfiguration.Initialize();
-                Application.Run(new Form1());
-            }
+            // To customize application configuration such as set high DPI settings or default font,
+            // see https://aka.ms/applicationconfiguration.
+            ApplicationConfiguration.Initialize();
+            Application.Run(new Form1());
         }
     }
 }
